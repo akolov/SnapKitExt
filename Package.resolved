@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/akolov/SnapKit.git",
+        "state": {
+          "branch": "develop",
+          "revision": "ecdedbe85992a4189ac5a774e195bc9b983ebca6",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
