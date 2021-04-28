@@ -20,7 +20,12 @@ extension ConstraintMakerRelatable {
     guard let other = self.description.item.superview else {
       fatalError("Expected superview but found nil when attempting make constraint `equalToSuperview`.")
     }
-    return self.relatedTo(other.snp.margins, relation: .equal, file: file, line: line)
+    if margins {
+      return self.relatedTo(other.snp.margins, relation: .equal, file: file, line: line)
+    }
+    else {
+      return self.relatedTo(other, relation: .equal, file: file, line: line)
+    }
   }
 
 }
