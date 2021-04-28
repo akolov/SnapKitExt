@@ -2,8 +2,8 @@
 //  ConstraintMaker+AspectRatio.swift
 //  SnapKit
 //
-//  Created by Alexander Kolov on 2018-06-27.
-//  Copyright © 2018 Wineapp Ltd. All rights reserved.
+//  Created by Alexander Kolov on 2021-04-28.
+//  Copyright © 2021 Wineapp Ltd. All rights reserved.
 //
 
 import SnapKit
