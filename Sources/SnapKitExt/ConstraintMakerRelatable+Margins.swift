@@ -20,12 +20,23 @@ extension ConstraintMakerRelatable {
     guard let other = self.description.item.superview else {
       fatalError("Expected superview but found nil when attempting make constraint `equalToSuperview`.")
     }
-    if margins {
-      return self.relatedTo(other.snp.margins, relation: .equal, file: file, line: line)
+    return self.relatedTo(margins ? other.snp.margins : other, relation: .equal, file: file, line: line)
+  }
+
+  @discardableResult
+  public func lessThanOrEqualToSuperview(margins: Bool, _ file: String = #file, _ line: UInt = #line) -> ConstraintMakerEditable {
+    guard let other = self.description.item.superview else {
+      fatalError("Expected superview but found nil when attempting make constraint `lessThanOrEqualToSuperview`.")
     }
-    else {
-      return self.relatedTo(other, relation: .equal, file: file, line: line)
+    return self.relatedTo(margins ? other.snp.margins : other, relation: .lessThanOrEqual, file: file, line: line)
+  }
+
+  @discardableResult
+  public func greaterThanOrEqualToSuperview(margins: Bool, _ file: String = #file, line: UInt = #line) -> ConstraintMakerEditable {
+    guard let other = self.description.item.superview else {
+      fatalError("Expected superview but found nil when attempting make constraint `greaterThanOrEqualToSuperview`.")
     }
+    return self.relatedTo(margins ? other.snp.margins : other, relation: .greaterThanOrEqual, file: file, line: line)
   }
 
 }
